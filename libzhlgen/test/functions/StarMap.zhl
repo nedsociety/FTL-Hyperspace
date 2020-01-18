@@ -18,7 +18,7 @@ void StarMap::InitNoFuelText(StarMap *this<ecx>);
 void StarMap::InitBossMessageBox(StarMap *this<ecx>);
 ".5589e55389cb83e4f0e812f7ffff89d9e8ebfaff":
 void StarMap::OnLanguageChange(StarMap *this<ecx>);
-".5589e583e4f0803d????????007435e8a46e1500":
+".5589e583e4f0803d??????????74":
 void StarMap::GetRandomSectorChoice(StarMap *this<ecx>);
 ".565331c08b5c240c85db78438bb1fc0600008b91":
 void StarMap::NeighboringSector(StarMap *this<ecx>, int unk0);

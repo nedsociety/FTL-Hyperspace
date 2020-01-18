@@ -4856,7 +4856,6 @@ struct CApp : CEvent
 	LIBZHL_API int OnInputFocus();
 	LIBZHL_API int OnInputBlur();
 	LIBZHL_API int OnExit();
-	LIBZHL_API void OnMButtonDown(int x, int y);
 	LIBZHL_API void OnTextEvent(CEvent::TextEvent textEvent);
 	LIBZHL_API void OnTextInput(int unk);
 	LIBZHL_API int OnRequestExit();

@@ -143,7 +143,7 @@ void CrewMember::ForceMindControl(CrewMember *this<ecx>, bool force);
 void CrewMember::RenderSkillUpAnimation(CrewMember *this<ecx>, Point pos);
 ".578d7c240883e4f0ff77fc5589e5":
 void CrewMember::Clone(CrewMember *this<ecx>);
-".578d7c240883e4f0ff77fc55":
+".578d7c240883e4f0ff77fc5589e557565389cb83ec5c8bb10002000085f60f85????????807b6c000f85????????":
 void CrewMember::UpdateHealth(CrewMember *this<ecx>);
 ".8b410485c00f85????????660fefc9f30f104108f30f1015????????":
 void CrewMember::OnRenderPath(CrewMember *this<ecx>);

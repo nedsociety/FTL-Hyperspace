@@ -1,20 +1,18 @@
-"578d7c240883e4f0ff77fc5589e5575389cb83ec1080b9f734000000":
+"578d7c240883e4f0ff77fc5589e5575389cb83ec1080b9ff3400000075??803d??????????74??0fb683003500008b4b08c744240400000000890424e8????????83ec08a1????????":
 int CApp::OnInputFocus(CApp *this<ecx>);
-".5789c88d7c240883e4f0ff77fc5589e5575383ec10c681f7340000008b4908803d??????????":
+".5789c88d7c240883e4f0ff77fc5589e5575383ec10c681ff340000008b4908803d":
 int CApp::OnInputBlur(CApp *this<ecx>);
 ".578d7c240883e4f0ff77fc5589e5575389cb83ec10e8????????c70424????????":
 int CApp::OnExit(CApp *this<ecx>);
-".80b9bc3400000074??c208008d74260080791000":
-void CApp::OnMButtonDown(CApp *this<ecx>, int x, int y);
-".578d7c240883e4f0ff77fc55":
+".578d7c240883e4f0ff77fc5589e55783ec1480b9c4340000008b0775":
 void CApp::OnTextEvent(CApp *this<ecx>, CEvent::TextEvent textEvent);
-".578d7c240883e4f0ff77fc5589e55783ec1480b9bc34000000":
+".578d7c240883e4f0ff77fc5589e55783ec1480b9c4340000008b0775":
 void CApp::OnTextInput(CApp *this<ecx>, int unk);
 ".578d7c240883e4f0ff77fc5589e5575389cb83ec108b490885c974??8b430c":
 int CApp::OnRequestExit(CApp *this<ecx>);
-".57660fefc08d7c240883e4f0ff77fc5589e557565389cb83ec2c8b072b81103500008b5704":
+".57660fefc08d7c240883e4f0ff77fc5589e557565389cb83ec":
 int CApp::OnMouseMove(CApp *this<ecx>, int x, int y, int xdiff, int ydiff, bool holdingLMB, bool holdingRMB, bool holdingMMB);
-".57660fefc08d7c240883e4f0ff77fc5589e5575389cb83ec208b072b81103500008b5704":
+".57660fefc08d7c240883e4f0ff77fc5589e5575389cb83ec208b072b81183500008b57042b911c350000":
 void CApp::OnRButtonUp(CApp *this<ecx>, int x, int y);
 ".57660fefc08d7c240883e4f0ff77fc5589e557":
 void CApp::OnLButtonUp(CApp *this<ecx>, int x, int y);
@@ -30,7 +28,8 @@ void CApp::OnKeyUp(CApp *this<ecx>, SDLKey key);
 void CApp::OnKeyDown(CApp *this<ecx>, SDLKey key);
 ".5589e55389cb83e4f0e8":
 void CApp::constructor(CApp *this<ecx>);
-".555789cd565383ec04c68541350000008b5424188b4c241c83fa017e??":
+
+".555789cd565383ec04c68549350000008b5424188b4c241c83fa017e??8d34918d4104893424eb??":
 void CApp::ParseArgs(CApp *this<ecx>, int unk, const char** args);
 ".578d7c240883e4f0ff77fc5589e557565389cbb9????????83ec4ce8????????":
 void CApp::OnLoop(CApp *this<ecx>);
@@ -42,13 +41,13 @@ void CApp::OnCleanup(CApp *this<ecx>);
 void CApp::GenInputEvents(CApp *this<ecx>);
 ".578d7c240883e4f0ff77fc5589e557":
 void CApp::OnSuspend(CApp *this<ecx>);
-"!.80b9bc3400000075??8079100074??c35589e55389cb8b4908":
+"!.80b9c43400000075??8079100074??":
 void CApp::OnResume(CApp *this<ecx>);
-".57660fefc08d7c240883e4f0ff77fc5589e55783ec248b072b8110350000":
+".57660fefc08d7c240883e4f0ff77fc5589e55783ec248b072b81183500008b5704":
 Pointf CApp::TranslateMouse(CApp *this<ecx>, int x, int y);
 ".803d??????????74??c38db6000000005589e5575653":
 void CApp::UpdateFullScreen(CApp *this<ecx>);
-".80b90c35000000c781ec34000000000000c781f034000000000000c7811035000000000000":
+".80b91435000000c781f434000000000000c781f834000000000000c7811835":
 int CApp::UpdateWindowSettings(CApp *this<ecx>);
 ".578d7c240883e4f0ff77fc5589e55756":
 void CApp::OnRender(CApp *this<ecx>);
