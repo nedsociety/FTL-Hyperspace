@@ -73,6 +73,8 @@
 					<Add library="C:/boost/lib/libboost_wave-mgw92-mt-x32-1_70.a" />
 					<Add library="C:/boost/lib/libboost_wserialization-mgw92-mt-x32-1_70.a" />
 					<Add library="libboost_wserialization-mgw92-mt-x32-1_70.a" />
+					<Add library="sapi" />
+					<Add library="ole32" />
 					<Add directory="C:/boost/lib" />
 					<Add directory="discord/lib" />
 				</Linker>
@@ -141,6 +143,8 @@
 					<Add library="libboost_unit_test_framework-mgw92-mt-x32-1_70.a" />
 					<Add library="libboost_wave-mgw92-mt-x32-1_70.a" />
 					<Add library="libboost_wserialization-mgw92-mt-x32-1_70.a" />
+					<Add library="sapi" />
+					<Add library="ole32" />
 					<Add directory="C:/boost/lib" />
 					<Add directory="discord/lib" />
 				</Linker>

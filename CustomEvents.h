@@ -1,6 +1,7 @@
 #pragma once
 #include "Global.h"
 #include <algorithm>
+#include <sapi.h>
 
 struct BeaconType
 {
@@ -80,10 +81,7 @@ struct BossShipDefinition
 class CustomEventsParser
 {
 public:
-    CustomEventsParser()
-    {
-
-    }
+    CustomEventsParser();
 
     void ParseCustomEventNode(rapidxml::xml_node<char> *node);
 
@@ -119,7 +117,8 @@ public:
 
     std::vector<std::string> eventFiles;
     CustomEvent *defaultVictory = new CustomEvent();
-
+    ISpVoice *pVoice = nullptr;
+    bool useVoice = false;
 
 private:
     std::vector<CustomSector*> customSectors;

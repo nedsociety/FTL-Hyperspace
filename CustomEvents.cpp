@@ -360,6 +360,10 @@ CustomSector *CustomEventsParser::GetCustomSector(const std::string& sectorName)
     return nullptr;
 }
 
+CustomEventsParser::CustomEventsParser()
+{
+}
+
 //=====================================================================================
 
 static bool g_checkCargo = false;
@@ -414,6 +418,28 @@ HOOK_METHOD(ShipObject, HasEquipment, (const std::string& equipment) -> int)
 
 static std::string removeHiddenAug = "";
 
+ISpVoice * pVoice = NULL;
+HANDLE thread = NULL;
+std::wstring eventTxt;
+
+
+DWORD WINAPI voiceThread(LPVOID lpParameter)
+{
+    if (!pVoice)
+    {
+        if (FAILED(CoInitializeEx(NULL, COINIT_MULTITHREADED)))
+            return 0;
+
+        HRESULT hr = CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void **)&pVoice);
+        pVoice->SetRate(5);
+    }
+
+
+    pVoice->Speak(eventTxt.c_str(), SPF_IS_XML | SPF_ASYNC | SPF_PURGEBEFORESPEAK, NULL);
+
+    return 0;
+}
+
 HOOK_METHOD(WorldManager, CreateChoiceBox, (LocationEvent *event) -> void)
 {
     auto customEvents = CustomEventsParser::GetInstance();
@@ -434,7 +460,16 @@ HOOK_METHOD(WorldManager, CreateChoiceBox, (LocationEvent *event) -> void)
 
 
 
+
     super(event);
+    std::string txt = G_->GetCApp()->gui->choiceBox.mainText;
+    eventTxt = std::wstring(txt.begin(), txt.end());
+
+    eventTxt.insert(eventTxt.size() / 2, L"<pitch absmiddle=\"10\"><rate absspeed=\"-6\">");
+    eventTxt.append(L"</pitch></rate>");
+
+    DWORD threadId;
+    thread = CreateThread(0, 0, voiceThread, NULL, 0, &threadId);
 
     g_checkCargo = false;
 }

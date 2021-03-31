@@ -5,6 +5,7 @@
 #include "EnemyShipIcons.h"
 #include <algorithm>
 #include <boost/lexical_cast.hpp>
+#include <sapi.h>
 
 CustomShipSelect CustomShipSelect::instance = CustomShipSelect();
 
@@ -1709,6 +1710,7 @@ HOOK_METHOD(ShipBuilder, Open, () -> void)
         }
     }
 }
+
 
 HOOK_METHOD(ShipBuilder, OnKeyDown, (SDLKey key) -> void)
 {
