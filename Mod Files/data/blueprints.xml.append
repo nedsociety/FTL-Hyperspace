@@ -126,6 +126,14 @@
 -->
 
 <!--
+<droneBlueprint name="DRONE_NAME">
+	...
+	
+	<target>ASTEROIDS/SOLID/ALL</target>             New target types for defense drones. SOLID means missiles/asteroids or drones but not lasers.
+</droneBlueprint>
+-->
+
+<!--
 <shipBlueprint name="PLAYER_SHIP_KESTRAL" layout="kestral" img="kestral">
 	<class>Testrel V2</class>
 	<name>The Testrel V2</name>
