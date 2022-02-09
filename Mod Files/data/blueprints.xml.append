@@ -98,6 +98,7 @@
 	<ionBeamFix>false</ionBeamFix>                   If true, prevents ion beams from inflicting ion damage to shields on every frame (instead it will be similar to beams hitting zoltan shields).
 	<simultaneousFire>false</simultaneousFire>       If true, all shots/charges will fire at once, rather than sequentially.
 	<fireTime>0.0</false>                            Overrides the firing animation speed. Default is 1.0 for bombs and charge weapons, and 0.25 for other weapons. Does not apply to beams.
+	<angularRadius>0.0</angularRadius>               Used for flak drones; if specified this is approximately the angular radius of the spread in degrees, overriding the normal fixed radius.
 	
 	<statBoostChance>0</statBoostChance>             Chance to apply stat boosts as listed below.
 	<statBoosts>                                     Same as statBoosts for crew/augment/etc. - list of all stat boosts to apply.
