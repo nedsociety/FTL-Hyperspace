@@ -3,8 +3,8 @@
 %include "constraints.i"
 
 %{
-#include "../../Global.h"
-#include "../../HSVersion.h"
+#include "Global.h"
+#include "HSVersion.h"
 %}
 
 namespace std {
