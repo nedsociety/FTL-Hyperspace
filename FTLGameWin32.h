@@ -10,7 +10,7 @@
     #define LIBZHL_PLACEHOLDER {(void)0;}
     #define __attribute__(x)
 #elif defined(_WIN32)
-    #define LIBZHL_INTERFACE __declspec(novtable)
+    #define LIBZHL_INTERFACE 
     __declspec(noreturn) inline void __cdecl __NOP() {}
     #define LIBZHL_PLACEHOLDER {__NOP();}
 #elif defined(__linux__)

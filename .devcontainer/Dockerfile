@@ -38,7 +38,7 @@ RUN echo deb http://dk.archive.ubuntu.com/ubuntu/ xenial main >> /etc/apt/source
 
 # Install common build tools
 RUN apt install -y --no-install-recommends \
-        ca-certificates curl zip unzip tar git ninja-build clang-10 pkg-config swig locales \
+        ca-certificates curl zip unzip tar git ninja-build clang-12 lld-12 lldb-12 pkg-config swig locales \
     && (LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 locale-gen en_US.UTF-8)
 
 # Setup CMake
@@ -75,7 +75,7 @@ COPY triplets/* /vcpkg/triplets/
 COPY toolchains/* /vcpkg/scripts/toolchains/
 
 # Workarounds for boost
-RUN ln -s /usr/bin/clang-10 /usr/bin/clang && ln -s /usr/bin/clang++-10 /usr/bin/clang++
+RUN ln -s /usr/bin/clang-12 /usr/bin/clang && ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
 # Workarounds for SDL2
 RUN ln -s /usr/gcc-4.8-clang-toolchain/include/asm-generic /usr/gcc-4.8-clang-toolchain/include/asm
