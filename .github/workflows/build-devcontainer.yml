@@ -24,5 +24,5 @@ jobs:
         uses: devcontainers/ci@v0.2
         with:
           # Should match to devcontainer.json setup
-          imageName: ghcr.io/FTL-Hyperspace/HS-devcontainer
+          imageName: ghcr.io/nedsociety/HS-devcontainer
           runCmd: echo Done.
