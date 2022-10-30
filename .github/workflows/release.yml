@@ -62,10 +62,13 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: build-package/FTL.Hyperspace.${{ inputs.version }}.zip
-          tag_name: refs/tags/v${{ inputs.version }}
+          tag_name: v${{ inputs.version }}
+          name: ${{ inputs.version }}
           generate_release_notes: true
 
       - name: Push changes to the repo
         run: |
-          git push origin
-          git push origin v${{ inputs.version }}
+          git push origin \
+            refs/heads/develop:refs/heads/develop \
+            refs/heads/master:refs/heads/master \
+            refs/tags/v${{ inputs.version }}:refs/tags/v${{ inputs.version }}
