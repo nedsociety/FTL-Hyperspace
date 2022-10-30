@@ -33,14 +33,12 @@ jobs:
         run: |
           git checkout master
           git merge develop
-          git tag v${{ inputs.version }} HEAD
 
       - name: Cherrypick version bump to master
         if:  ${{ !inputs.merge }} 
         run: |
           git checkout master
           git cherry-pick -x develop
-          git tag v${{ inputs.version }} HEAD
 
       # - name: Build binaries
       #   run: |
@@ -58,6 +56,12 @@ jobs:
           cd build-package
           zip -r FTL.Hyperspace.${{ inputs.version }}.zip * -x FTL.Hyperspace.${{ inputs.version }}.zip -x Linux/IGNORE_THIS_FILE.txt
 
+      - name: Push changes to the repo
+        run: |
+          git push origin develop:develop master:master
+          git tag v${{ inputs.version }} master
+          git push origin v${{ inputs.version }}
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
@@ -65,10 +69,3 @@ jobs:
           tag_name: v${{ inputs.version }}
           name: ${{ inputs.version }}
           generate_release_notes: true
-
-      - name: Push changes to the repo
-        run: |
-          git push origin \
-            refs/heads/develop:refs/heads/develop \
-            refs/heads/master:refs/heads/master \
-            refs/tags/v${{ inputs.version }}:refs/tags/v${{ inputs.version }}
