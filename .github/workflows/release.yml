@@ -56,12 +56,13 @@ jobs:
           cp build-*/Hyperspace.*.so "build-package/Linux/"
           cp build-*/Hyperspace.dll "build-package/Windows - Extract these files into where FTLGame.exe is/"
           cd build-package
-          zip -r FTL.Hyperspace.${{ inputs.version }}.zip * -x FTL.Hyperspace.${{ inputs.version }}.zip
+          zip -r FTL.Hyperspace.${{ inputs.version }}.zip * -x FTL.Hyperspace.${{ inputs.version }}.zip -x Linux/IGNORE_THIS_FILE.txt
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: build-package/FTL.Hyperspace.${{ inputs.version }}.zip
+          tag_name: refs/tags/v${{ inputs.version }}
           generate_release_notes: true
 
       - name: Push changes to the repo
