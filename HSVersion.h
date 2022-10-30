@@ -7,7 +7,7 @@ Change the version numbers here
 */
 #define HS_VER_MAJOR 1
 #define HS_VER_MINOR 2
-#define HS_VER_PATCH 9
+#define HS_VER_PATCH 11
 
 #define BUILD_IDENTIFIER_HASH "unknown_build"
 #define BUILD_BRANCH ""
