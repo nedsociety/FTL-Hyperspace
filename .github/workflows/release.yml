@@ -33,18 +33,18 @@ jobs:
         run: |
           git checkout master
           git merge develop
-          git tag v${{ inputs.version }}
+          git tag v${{ inputs.version }} HEAD
 
       - name: Cherrypick version bump to master
         if:  ${{ !inputs.merge }} 
         run: |
           git checkout master
           git cherry-pick -x develop
-          git tag v${{ inputs.version }}
+          git tag v${{ inputs.version }} HEAD
 
-      - name: Build binaries
-        run: |
-          buildscripts/ci-buildall-release-only-from-docker.sh
+      # - name: Build binaries
+      #   run: |
+      #     buildscripts/ci-buildall-release-only-from-docker.sh
 
       - name: Package
         run: |
@@ -53,8 +53,8 @@ jobs:
           zip -r Hyperspace.ftl * -x Hyperspace.ftl
           cd ..
           mv "Mod Files/Hyperspace.ftl" build-package
-          cp build-*/Hyperspace.*.so "build-package/Linux/"
-          cp build-*/Hyperspace.dll "build-package/Windows - Extract these files into where FTLGame.exe is/"
+          # cp build-*/Hyperspace.*.so "build-package/Linux/"
+          # cp build-*/Hyperspace.dll "build-package/Windows - Extract these files into where FTLGame.exe is/"
           cd build-package
           zip -r FTL.Hyperspace.${{ inputs.version }}.zip * -x FTL.Hyperspace.${{ inputs.version }}.zip -x Linux/IGNORE_THIS_FILE.txt
 
